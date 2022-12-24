@@ -1,5 +1,5 @@
-// ? Remember that PROTOTYPE works in the form of a chain/tree to real instances of the object,
-// ? and when changing those from the parent, it changes those then referenced by the child object.
+// * Remember that PROTOTYPE works in the form of a chain/tree to real instances of the object,
+// * and when changing those from the parent, it changes those then referenced by the child object.
 
 const animal = {
   dna: "ATCG",
@@ -17,7 +17,7 @@ Object.getPrototypeOf(animal) === Object.prototype; // true
 
 Object.getPrototypeOf(Object.prototype) === null; // true
 
-// ? OBJECT DESTRUCTURING
+// * OBJECT DESTRUCTURING
 
 const person = {
   name: "John",
@@ -36,7 +36,7 @@ const { name: firstName, age: years } = person;
 const fruits = ["apple", "banana", "orange"];
 const [first, second, third] = fruits;
 
-// ? The SPREAD syntax/operator used to combine objects/arrays
+// * The SPREAD syntax/operator used to combine objects/arrays
 
 const obj1 = {
   name: "Nico",
@@ -60,3 +60,18 @@ const list_2 = [3, 4, 5, 6];
 const combined_list = [...list_1, ...list_2];
 
 console.log(combined_list);
+
+// * OPTIONAL CHAINING to avoid throwing errors. From what I could see, the object/function/list must exist.
+
+const company = {
+  name: "Philip Morris",
+};
+console.log(company?.name);
+console.log(company?.nico);
+
+function printMagicIndex(arr) {
+  console.log(arr?.[2]);
+}
+
+printMagicIndex([0, 1, 2, 3, 4, 5]); // 2
+printMagicIndex(); // undefined; if not using ?., this would throw
