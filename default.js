@@ -87,3 +87,31 @@ console.log(foo_1);
 
 const foo_2 = 0 ?? "bar";
 console.log(foo_2);
+
+/*
+ * HIGHER ORDER FUNCTIONS is a function that takes a function as an argument, or returns a function.
+ * Used for abstracting away complexity.
+ *
+ * Note that "function name(a, b, c){}" is a function declaration, and
+ * "const math = function(a, b, c){}"" is a function expression.
+ */
+
+function add(x, y) {
+  return x + y;
+}
+
+function subtract(x, y) {
+  return x - y;
+}
+
+function math(x, y, operator) {
+  return operator(x, y);
+}
+
+console.log(math(4, 4, add));
+
+function funWrapper(callback) {
+  callback("Called by wrapper");
+}
+
+funWrapper((m) => console.log(m)); // "Called by wrapper"
