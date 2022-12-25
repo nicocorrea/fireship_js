@@ -75,3 +75,15 @@ function printMagicIndex(arr) {
 
 printMagicIndex([0, 1, 2, 3, 4, 5]); // 2
 printMagicIndex(); // undefined; if not using ?., this would throw
+
+/*
+ * Nullish coalescing is a relativly new operator that was introduced in ES2020.
+ * It is similar to the logical OR operator ||, but it only returns the right-hand side
+ * if the left-hand side is null or undefined.
+ */
+
+const foo_1 = null ?? "bar";
+console.log(foo_1);
+
+const foo_2 = 0 ?? "bar";
+console.log(foo_2);
