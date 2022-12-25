@@ -115,3 +115,23 @@ function funWrapper(callback) {
 }
 
 funWrapper((m) => console.log(m)); // "Called by wrapper"
+
+/*
+ * A CLOSURE is a function that has access to the parent scope, even after the parent function has closed.
+ * JS will automatically store the state of a closure in the heap memory, even after the parent function has returned.
+ * This behavior makes them useful for encapsulating private variables.
+ */
+
+function encapsulatedState(x) {
+  let state = 10;
+  return function () {
+    state += x;
+    return state;
+  };
+}
+
+const testClosure = encapsulatedState(10);
+
+console.log(testClosure()); // 20
+console.log(testClosure()); // 30
+console.log(testClosure()); // 40
