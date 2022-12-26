@@ -135,3 +135,41 @@ const testClosure = encapsulatedState(10);
 console.log(testClosure()); // 20
 console.log(testClosure()); // 30
 console.log(testClosure()); // 40
+
+/*
+ * ARRAY TRICKS
+ * The example below is for creating a range of numbers
+ */
+
+const range_1 = Array(100)
+  .fill(0)
+  .map((_, i) => i + 1);
+
+const range_2 = [...Array(100).keys()];
+
+console.log(range_1);
+console.log(range_2);
+
+// Remove duplicates from an array
+const unique = [...new Set(range_1)];
+
+// Get a random element
+const random = range_1[Math.floor(Math.random() * range_1.length)];
+
+console.log(random);
+
+// Loop over a key-value pair
+for (const [i, val] of range_1.entries()) {
+  console.log(i, val);
+}
+
+/*
+ Array methods to know
+ 
+ arr.forEach()
+ arr.map()
+ arr.filter()
+ arr.find()
+ arr.findIndex()
+ arr.reduce()
+*/
