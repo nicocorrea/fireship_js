@@ -11,10 +11,15 @@ test("cumulative sum of an array", () => {
 test("binary search", () => {
   expect(search([1, 2, 3, 4, 5, 6, 7], 7)).toBe(6);
   expect(search([1, 2, 3, 4], 1)).toBe(0);
+  expect(search([1, 2, 3, 4], 10)).toBe(-1);
 });
 
 test("least recently used", () => {
-  const cache = new lru(5);
+  const cache = new lru(3);
   cache.putItem("a", 1);
   expect(cache.getItem("a")).toBe(1);
+  cache.putItem("a", 2);
+  cache.putItem("c", 3);
+  cache.putItem("d", 5);
+  cache.putItem("e", 6);
 });
