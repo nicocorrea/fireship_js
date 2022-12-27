@@ -11,7 +11,7 @@ test("cumulative sum of an array", () => {
 test("binary search", () => {
   expect(search([1, 2, 3, 4, 5, 6, 7], 7)).toBe(6);
   expect(search([1, 2, 3, 4], 1)).toBe(0);
-  expect(search([1, 2, 3, 4], 10)).toBe(-1);
+  expect(search([1, 2, 3, 4], 10)).toBe(-1); //?
 });
 
 test("least recently used", () => {
