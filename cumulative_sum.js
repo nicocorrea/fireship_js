@@ -1,7 +1,7 @@
 const arr = [1, 3, 5, 7];
 
 // OPTION 1
-function cumulative(arr) {
+export function cumulative(arr) {
   let total = 0;
   arr.forEach((x) => (total += x));
   return total;

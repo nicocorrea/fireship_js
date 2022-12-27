@@ -9,7 +9,7 @@ function itv(arr, target) {
 console.log(itv(arr, 3)); // OPTION 1
 console.log(arr.indexOf(3)); // OPTION 2
 
-function search(arr, target, start = 0, end = arr.length - 1) {
+export function search(arr, target, start = 0, end = arr.length - 1) {
   console.log(start, end);
 
   if (start > end) {
